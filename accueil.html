@@ -1,12 +1,61 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon site de SNT 2024-2025</title>
-  </head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .button {
+            padding: 15px 30px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            width: 200px;
+            text-align: center;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
 <body>
 
-<h1>Bienvenue dans mon site web de SNT 2024-2025/h1>
-<p>My first paragraph.</p>
+    <h1>Choisissez un sujet :</h1>
+    <div class="container">
+        <button class="button" onclick="alert('Programmation')">Programmation</button>
+        <button class="button" onclick="alert('Réseaux sociaux')">Réseaux sociaux</button>
+        <button class="button" onclick="alert('Internet')">Internet</button>
+        <button class="button" onclick="alert('Le web')">Le web</button>
+        <button class="button" onclick="alert('Données structurées')">Données structurées</button>
+        <button class="button" onclick="alert('Photographies numériques')">Photographies numériques</button>
+        <button class="button" onclick="alert('Géo-localisation')">Géo-localisation</button>
+        <button class="button" onclick="alert('Objets connectés')">Objets connectés</button>
+        <button class="button" onclick="alert('Personnel')">Personnel</button>
+    </div>
 
 </body>
 </html>
