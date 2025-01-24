@@ -1,1 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Protocole TCP</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        section {
+            margin-top: 20px;
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        h2 {
+            color: #3e8e41;
+        }
+        p {
+            font-size: 1.1em;
+            line-height: 1.6em;
+        }
+        ul {
+            margin-top: 10px;
+        }
+        li {
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Qu'est-ce que le Protocole TCP ?</h1>
+    </header>
 
+    <section>
+        <h2>Introduction</h2>
+        <p>Le protocole TCP (Transmission Control Protocol) est l'un des protocoles fondamentaux utilisés dans la communication sur Internet et dans les réseaux informatiques. Il fait partie du modèle OSI (Open Systems Interconnection) et du modèle TCP/IP qui est la base de l'architecture d'Internet.</p>
+        <p>Le rôle principal du protocole TCP est de garantir la fiabilité de la transmission de données entre deux systèmes distants. Il s'assure que les données envoyées arrivent correctement, sans erreur, et dans le bon ordre.</p>
+    </section>
+
+    <section>
+        <h2>Comment fonctionne TCP ?</h2>
+        <p>Le protocole TCP fonctionne en établissant une "connexion" entre deux machines (par exemple, un client et un serveur) avant de commencer à transmettre des données. Cette connexion se fait via un processus appelé "handshake" (serrement de main), qui permet d'établir les conditions de communication. Voici les étapes principales :</p>
+        <ul>
+            <li><strong>Connexion initiale</strong> : Avant de commencer la transmission, TCP établit une connexion entre le client et le serveur via un processus en trois étapes appelé "Three-Way Handshake" :</li>
+            <ul>
+                <li><strong>Step 1</strong>: Le client envoie un paquet SYN (Synchronize) au serveur pour initier la connexion.</li>
+                <li><strong>Step 2</strong>: Le serveur répond avec un paquet SYN-ACK (Synchronize-Acknowledge) pour indiquer qu'il est prêt à recevoir les données.</li>
+                <li><strong>Step 3</strong>: Le client envoie un paquet ACK (Acknowledge) pour confirmer la connexion, et la communication peut commencer.</li>
+            </ul>
+            <li><strong>Transmission des données</strong> : Une fois la connexion établie, TCP divise les données en petits paquets appelés segments. Chaque segment porte un numéro de séquence qui permet de réorganiser les paquets dans le bon ordre lorsqu'ils arrivent à destination.</li>
+            <li><strong>Contrôle de flux</strong> : TCP gère la vitesse à laquelle les données sont envoyées pour éviter que le récepteur soit submergé par trop de données à la fois. Cela permet de maintenir un débit de données optimal.</li>
+            <li><strong>Contrôle d'intégrité</strong> : Chaque segment TCP contient une somme de contrôle (checksum) pour vérifier l'intégrité des données et s'assurer qu'elles n'ont pas été corrompues pendant le transfert.</li>
+            <li><strong>Acknowledgement</strong> : Chaque fois qu'un segment est reçu correctement, le récepteur envoie un accusé de réception (ACK) pour informer l'émetteur que les données ont bien été reçues.</li>
+            <li><strong>Fermeture de la connexion</strong> : Lorsque la communication est terminée, TCP ferme proprement la connexion, garantissant que tous les paquets ont bien été reçus avant de se déconnecter.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Caractéristiques principales de TCP</h2>
+        <ul>
+            <li><strong>Fiabilité</strong> : TCP garantit que les paquets arrivent dans le bon ordre et sans erreur. Si un paquet est perdu ou corrompu, il sera renvoyé.</li>
+            <li><strong>Contrôle de flux</strong> : TCP régule la vitesse de transmission des données pour éviter que l'expéditeur envoie trop de données trop rapidement.</li>
+            <li><strong>Contrôle de congestion</strong> : TCP détecte et gère la congestion du réseau pour éviter une surcharge du réseau.</li>
+            <li><strong>Contrôle d'intégrité</strong> : La somme de contrôle (checksum) permet de vérifier l'intégrité des données et de s'assurer qu'elles ne sont pas altérées durant le transfert.</li>
+            <li><strong>Connection orientée</strong> : Contrairement à d'autres protocoles comme UDP (User Datagram Protocol), TCP est un protocole orienté connexion, ce qui signifie qu'il établit une connexion avant de commencer à envoyer des données.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Applications courantes de TCP</h2>
+        <p>Le protocole TCP est utilisé dans de nombreuses applications qui nécessitent une transmission fiable des données. Parmi les exemples les plus courants, on trouve :</p>
+        <ul>
+            <li>La navigation web (HTTP/HTTPS)</li>
+            <li>Les transferts de fichiers (FTP)</li>
+            <li>Les emails (SMTP, POP3, IMAP)</li>
+            <li>Les connexions à des bases de données (MySQL, PostgreSQL)</li>
+            <li>Les services de messagerie instantanée (par exemple, Skype, WhatsApp sur le réseau Wi-Fi)</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>Le protocole TCP est essentiel pour assurer la fiabilité des communications sur Internet. Sans lui, de nombreuses applications modernes ne seraient pas possibles. Il reste une pierre angulaire de l'architecture d'Internet et des réseaux modernes.</p>
+    </footer>
+</body>
+</html>
