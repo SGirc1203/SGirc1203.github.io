@@ -1,1 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protocole DNS</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4fdfb;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #20b2aa;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+        section {
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #20b2aa;
+        }
+        ul {
+            list-style-type: circle;
+        }
+        ul li {
+            margin-bottom: 10px;
+        }
+        .code {
+            background-color: #e0f7fa;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: "Courier New", monospace;
+        }
+        footer {
+            background-color: #20b2aa;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Protocole DNS</h1>
+    </header>
+    
+    <section>
+        <p>Le <strong>Domain Name System (DNS)</strong> est un système utilisé pour traduire les noms de domaine compréhensibles par les humains (comme exemple.com) 
+        en adresses IP compréhensibles par les machines (comme 192.0.2.1). Cette traduction est essentielle pour la navigation sur Internet, 
+        car elle permet aux utilisateurs d'accéder aux sites web sans avoir à mémoriser des adresses IP numériques.</p>
+        
+        <h2>Fonctionnement du DNS</h2>
+        <ul>
+            <li><strong>Résolution des noms :</strong> Lorsqu'un utilisateur entre un nom de domaine dans le navigateur, le DNS se charge de trouver l'adresse IP associée à ce domaine.</li>
+            <li><strong>Serveurs DNS :</strong> Il existe plusieurs types de serveurs DNS qui travaillent ensemble pour compléter la résolution des noms, 
+                comme les serveurs racine, les serveurs TLD (Top-Level Domain) et les serveurs autoritatifs.</li>
+            <li><strong>Cache DNS :</strong> Pour améliorer l'efficacité, les réponses DNS sont temporairement stockées dans des caches, permettant une résolution plus rapide des noms déjà consultés.</li>
+        </ul>
+
+        <h2>Composants du DNS</h2>
+        <p>Le DNS se compose de plusieurs éléments clés :</p>
+        <ul>
+            <li><strong>Zone :</strong> Une portion de l'espace de noms de domaine qui est administrée par une entité spécifique.</li>
+            <li><strong>Enregistrement DNS :</strong> Une entrée dans la base de données DNS qui fournit des informations sur un domaine ou une adresse IP.</li>
+            <li><strong>Serveur de noms :</strong> Un serveur qui stocke les enregistrements DNS et répond aux demandes de résolution des noms.</li>
+        </ul>
+
+        <h2>Types d'enregistrements DNS</h2>
+        <ul>
+            <li><strong>Enregistrement A :</strong> Mappe les noms de domaine aux adresses IPv4.</li>
+            <li><strong>Enregistrement AAAA :</strong> Mappe les noms de domaine aux adresses IPv6.</li>
+            <li><strong>Enregistrement CNAME :</strong> Alias d'un nom de domaine à un autre.</li>
+            <li><strong>Enregistrement MX :</strong> Désigne les serveurs de messagerie pour le domaine.</li>
+            <li><strong>Enregistrement TXT :</strong> Contient des informations textuelles utilisables pour diverses fonctions, comme la vérification SPF.</li>
+        </ul>
+        
+        <p>Voici un exemple d'enregistrement A :</p>
+        <pre class="code">example.com. 3600 IN A 192.0.2.1</pre>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Protocole DNS - Tous droits réservés</p>
+    </footer>
+</body>
+</html>
 
