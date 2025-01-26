@@ -4,39 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Protocole TCP/IP</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4169e1;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        section {
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #4169e1;
+        }
+        ul {
+            list-style-type: square;
+        }
+        ul li {
+            margin-bottom: 10px;
+        }
+        .code {
+            background-color: #e0e0e0;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: "Courier New", monospace;
+        }
+        footer {
+            background-color: #4169e1;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
 </head>
 <body>
-    <h1>Protocole TCP/IP</h1>
+    <header>
+        <h1>Protocole TCP/IP</h1>
+    </header>
     
-    <p>Les protocoles TCP et IP sont un ensemble de protocoles de communication qui permettent la navigation sur internet. 
-    Tous les réseaux indépendants peuvent communiquer entre eux grâce au protocole TCP/IP. Tous les réseaux peuvent échanger des informations grâce au protocole IP. 
-    <strong>IP</strong> c’est Internet Protocole. Toutes les machines possèdent une adresse IP, deux machines ne peuvent pas avoir la même adresse. 
-    Cette adresse est représentée par 4 valeurs en 0 et 255. Chaque valeur représente 1 octet, 1 octet c’est 8 bits un bit c'est une valeur soit 0 ou 1. 
-    Actuellement nous sommes en norme IPV4 c'est-à-dire que nous avons 4 octets pour pouvoir coder votre adresse IP. 
-    Toujours à côté de l’adresse IP on met un masque de sous-réseau qui est aussi composé comme une adresse IP. 
-    Ce masque nous aide à séparer la partie réseau de la partie hôte. Les machines ayant le même partie réseau pourront communiquer en ayant une partie hôte différente.</p>
+    <section>
+        <p>Les protocoles TCP et IP sont un ensemble de protocoles de communication qui permettent la navigation sur internet. 
+        Tous les réseaux indépendants peuvent communiquer entre eux grâce au protocole TCP/IP. Tous les réseaux peuvent échanger des informations grâce au protocole IP. 
+        <strong>IP</strong> c’est Internet Protocole. Toutes les machines possèdent une adresse IP, deux machines ne peuvent pas avoir la même adresse. 
+        Cette adresse est représentée par 4 valeurs en 0 et 255. Chaque valeur représente 1 octet, 1 octet c’est 8 bits un bit c'est une valeur soit 0 ou 1. 
+        Actuellement nous sommes en norme IPV4 c'est-à-dire que nous avons 4 octets pour pouvoir coder votre adresse IP. 
+        Toujours à côté de l’adresse IP on met un masque de sous-réseau qui est aussi composé comme une adresse IP. 
+        Ce masque nous aide à séparer la partie réseau de la partie hôte. Les machines ayant le même partie réseau pourront communiquer en ayant une partie hôte différente.</p>
+        
+        <h2>Classes d'adresses IP</h2>
+        <ul>
+            <li><strong>Classe C :</strong> Possède 3 octets pour la partie réseau et un octet pour la partie hôte. C'est la classe la plus répandue. Pour connecter plus de 255 machines, il faut passer à la Classe B.</li>
+            <li><strong>Classe B :</strong> Possède 2 octets pour la partie réseau et 2 octets pour la partie hôte. Dans ce cas, on peut connecter 2^16 ordinateurs sur ce réseau.</li>
+            <li><strong>Classe A :</strong> Possède 1 octet pour la partie réseau et 3 octets pour la partie hôte. Cela permet de créer un réseau de très grande taille.</li>
+        </ul>
     
-    <h2>Classes d'adresses IP</h2>
-    <ul>
-        <li><strong>Classe C :</strong> Possède 3 octets pour la partie réseau et un octet pour la partie hôte. C'est la classe la plus répandue. Pour connecter plus de 255 machines, il faut passer à la Classe B.</li>
-        <li><strong>Classe B :</strong> Possède 2 octets pour la partie réseau et 2 octets pour la partie hôte. Dans ce cas, on peut connecter 2^16 ordinateurs sur ce réseau.</li>
-        <li><strong>Classe A :</strong> Possède 1 octet pour la partie réseau et 3 octets pour la partie hôte. Cela permet de créer un réseau de très grande taille.</li>
-    </ul>
+        <h2>Adresse passerelle</h2>
+        <p>L’adresse passerelle permet de passer d’un réseau vers un autre à l'aide d'un routeur. 
+        Cette adresse est privée et vous devez la définir pour passer d’un routeur vers un autre réseau, 
+        cette adresse finit généralement par .1. Pour accéder à la carte du réseau, il faut utiliser la commande <code class="code">ipconfig</code>, 
+        qui vous montrera l’adresse du réseau, le masque de sous-réseau et l’adresse de la passerelle.</p>
+        
+        <h2>Protocole TCP</h2>
+        <p><strong>TCP</strong> signifie Transmission Control Protocol. C'est un protocole de transport orienté connexion qui permet la transmission fiable et ordonnée de données sur un réseau. 
+        Il établit une connexion entre les machines avant de transférer des données, garantissant que toutes les données sont reçues correctement et dans le bon ordre. Voici quelques caractéristiques importantes du protocole TCP :</p>
+        <ul>
+            <li>Établissement de connexion : Avant d'envoyer des données, une connexion doit être établie entre l'émetteur et le récepteur à l'aide d'un processus de poignée de main en trois étapes.</li>
+            <li>Fiabilité : TCP assure que toutes les données envoyées arrivent à destination sans erreurs, en utilisant des séquences et des accusés de réception (acknowledgments).</li>
+            <li>Contrôle de flux : TCP régule le flux de données pour éviter la congestion et assurer une transmission efficace.</li>
+            <li>Segmentations et assemblage : Les données sont segmentées en petits morceaux pour la transmission et réassemblées à la destination.</li>
+        </ul>
+    </section>
 
-    <h2>Adresse passerelle</h2>
-    <p>L’adresse passerelle permet de passer d’un réseau vers un autre à l'aide d'un routeur. 
-    Cette adresse est privée et vous devez la définir pour passer d’un routeur vers un autre réseau, 
-    cette adresse finit généralement par .1. Pour accéder à la carte du réseau, il faut utiliser la commande <code>ipconfig</code>, 
-    qui vous montrera l’adresse du réseau, le masque de sous-réseau et l’adresse de la passerelle.</p>
-    
-    <h2>Protocole TCP</h2>
-    <p><strong>TCP</strong> signifie Transmission Control Protocol. C'est un protocole de transport orienté connexion qui permet la transmission fiable et ordonnée de données sur un réseau. 
-    Il établit une connexion entre les machines avant de transférer des données, garantissant que toutes les données sont reçues correctement et dans le bon ordre. Voici quelques caractéristiques importantes du protocole TCP :</p>
-    <ul>
-        <li>Établissement de connexion : Avant d'envoyer des données, une connexion doit être établie entre l'émetteur et le récepteur à l'aide d'un processus de poignée de main en trois étapes.</li>
-        <li>Fiabilité : TCP assure que toutes les données envoyées arrivent à destination sans erreurs, en utilisant des séquences et des accusés de réception (acknowledgments).</li>
-        <li>Contrôle de flux : TCP régule le flux de données pour éviter la congestion et assurer une transmission efficace.</li>
-        <li>Segmentations et assemblage : Les données sont segmentées en petits morceaux pour la transmission et réassemblées à la destination.</li>
-    </ul>
+    <footer>
+        <p>&copy; 2025 Protocole TCP/IP - Tous droits réservés</p>
+    </footer>
 </body>
 </html>
