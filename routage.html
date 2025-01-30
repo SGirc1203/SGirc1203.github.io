@@ -3,44 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Le Routage</title>
+    <title>Le routage</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f8ff;
+            font-family: 'Arial', sans-serif;
+            background-color: #ffd8dc;
             color: #333;
             margin: 0;
-            padding: 20px;
+            padding: 0;
         }
-        h1 {
-            color: #4CAF50;
+        header {
+            background-color: #ff314a;
+            color: white;
+            padding: 15px 0;
             text-align: center;
         }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: #fff;
+        section {
             padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
         }
-        .example {
-            background-color: #e7f3fe;
-            border-left: 6px solid #2196F3;
+        h1{
+            color: #ffffff
+        }
+        h2 {
+            color: #ff314a;
+        }
+        ul {
+            list-style-type: circle;
+        }
+        ul li {
+            margin-bottom: 10px;
+        }
+        .code {
+            background-color: #d4deff;
             padding: 10px;
-            margin: 20px 0;
+            border-radius: 5px;
+            font-family: "Courier New", monospace;
+        }
+        footer {
+            background-color: #3e56c3;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Le Routage</h1>
-        <p>Le routage est le processus de sélection d'un chemin pour le trafic dans un réseau ou entre des réseaux multiples. En termes simples, il s'agit de la manière dont les données sont dirigées d'un point A à un point B sur Internet ou un autre réseau.</p>
-        <div class="example">
-            <h2>Exemple de Routage</h2>
-            <p>Imaginez que vous envoyez une lettre. Vous écrivez l'adresse du destinataire sur l'enveloppe, et la poste s'occupe de la livrer à la bonne destination en suivant un certain chemin. Le routage sur Internet fonctionne de manière similaire, mais avec des paquets de données.</p>
-        </div>
-    </div>
+    <header>
+        <h1>Le routage</h1>
+    </header>
+    
+    <section>Le routage</strong> </p>
+        
+        <h2>Fonctionnement du DNS</h2>
+        <ul>
+            <li><strong>Résolution des noms :</strong> Lorsqu'un utilisateur entre un nom de domaine dans le navigateur, le DNS se charge de trouver l'adresse IP associée à ce domaine.</li>
+            <li><strong>Serveurs DNS :</strong> Il existe plusieurs types de serveurs DNS qui travaillent ensemble pour compléter la résolution des noms, 
+                comme les serveurs racine, les serveurs TLD (Top-Level Domain) et les serveurs autoritatifs.</li>
+            <li><strong>Cache DNS :</strong> Pour améliorer l'efficacité, les réponses DNS sont temporairement stockées dans des caches, permettant une résolution plus rapide des noms déjà consultés.</li>
+        </ul>
+
+        <h2>Composants du DNS</h2>
+        <p>Le DNS se compose de plusieurs éléments clés :</p>
+        <ul>
+            <li><strong>Zone :</strong> Une portion de l'espace de noms de domaine qui est administrée par une entité spécifique.</li>
+            <li><strong>Enregistrement DNS :</strong> Une entrée dans la base de données DNS qui fournit des informations sur un domaine ou une adresse IP.</li>
+            <li><strong>Serveur de noms :</strong> Un serveur qui stocke les enregistrements DNS et répond aux demandes de résolution des noms.</li>
+        </ul>
+
+        <h2>Types d'enregistrements DNS</h2>
+        <ul>
+            <li><strong>Enregistrement A :</strong> Mappe les noms de domaine aux adresses IPv4.</li>
+            <li><strong>Enregistrement AAAA :</strong> Mappe les noms de domaine aux adresses IPv6.</li>
+            <li><strong>Enregistrement CNAME :</strong> Alias d'un nom de domaine à un autre.</li>
+            <li><strong>Enregistrement MX :</strong> Désigne les serveurs de messagerie pour le domaine.</li>
+            <li><strong>Enregistrement TXT :</strong> Contient des informations textuelles utilisables pour diverses fonctions, comme la vérification SPF.</li>
+        </ul>
+        
+        <p>Voici un exemple d'enregistrement A :</p>
+        <pre class="code">example.com. 3600 IN A 192.0.2.1</pre>
+        
+        <video width="640" height="360" controls>
+        <source src="DNS.mp4" type="video/mp4">
+        </video>
+    </section>
+
 </body>
 </html>
-
