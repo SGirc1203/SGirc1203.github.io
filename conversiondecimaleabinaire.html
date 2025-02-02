@@ -52,39 +52,32 @@
 </head>
 <body>
     <header>
-        <h1>Réseau pair à pair</h1>
+        <h1>Conversion decimale à binaire</h1>
     </header>
     
     <section>
-        <p>Le <strong>Conversion decimale à binaire</strong> </p>
         
-        <h2>Fonctionnement du DNS</h2>
+        <h2>Conversion decimale à binaire</h2>
         <ul>
-            <li><strong>Résolution des noms :</strong> Lorsqu'un utilisateur entre un nom de domaine dans le navigateur, le DNS se charge de trouver l'adresse IP associée à ce domaine.</li>
-            <li><strong>Serveurs DNS :</strong> Il existe plusieurs types de serveurs DNS qui travaillent ensemble pour compléter la résolution des noms, 
-                comme les serveurs racine, les serveurs TLD (Top-Level Domain) et les serveurs autoritatifs.</li>
-            <li><strong>Cache DNS :</strong> Pour améliorer l'efficacité, les réponses DNS sont temporairement stockées dans des caches, permettant une résolution plus rapide des noms déjà consultés.</li>
+            <li><strong>1 :</strong> Division par 2 : Divisez le nombre décimal par 2.</li>
+            <li><strong>2 :</strong> Reste : Notez le reste (0 ou 1).</li>
+            <li><strong>3 :</strong> Quotient : Prenez le quotient entier et répétez le processus jusqu'à ce que le quotient soit 0.</li>
         </ul>
 
-        <h2>Composants du DNS</h2>
-        <p>Le DNS se compose de plusieurs éléments clés :</p>
-        <ul>
-            <li><strong>Zone :</strong> Une portion de l'espace de noms de domaine qui est administrée par une entité spécifique.</li>
-            <li><strong>Enregistrement DNS :</strong> Une entrée dans la base de données DNS qui fournit des informations sur un domaine ou une adresse IP.</li>
-            <li><strong>Serveur de noms :</strong> Un serveur qui stocke les enregistrements DNS et répond aux demandes de résolution des noms.</li>
-        </ul>
+        <h2>Rapport avec les Adresses IP</h2>
+        <p>Les adresses IP (Internet Protocol) sont composées de nombres en base 2 (binaire). Les adresses IPv4, par exemple, sont des séries de 32 bits, souvent représentées en notation décimale pointée, divisée en quatre octets. Voici comment cela fonctionne :</p>
 
-        <h2>Types d'enregistrements DNS</h2>
+        <h2>Adresses IPv4</h2>
+        <p>Chaque adresse IP est composée de quatre octets (8 bits chacun).</p>
+        <p>Exemple : L'adresse IP 192.168.1.1 en binaire est :</p>
         <ul>
-            <li><strong>Enregistrement A :</strong> Mappe les noms de domaine aux adresses IPv4.</li>
-            <li><strong>Enregistrement AAAA :</strong> Mappe les noms de domaine aux adresses IPv6.</li>
-            <li><strong>Enregistrement CNAME :</strong> Alias d'un nom de domaine à un autre.</li>
-            <li><strong>Enregistrement MX :</strong> Désigne les serveurs de messagerie pour le domaine.</li>
-            <li><strong>Enregistrement TXT :</strong> Contient des informations textuelles utilisables pour diverses fonctions, comme la vérification SPF.</li>
+            <li>192 en binaire : 11000000</li>
+            <li>168 en binaire : 10101000</li>
+            <li>1 en binaire : 00000001</li>
+            <li>1 en binaire : 00000001</li>
         </ul>
         
-        <p>Voici un exemple d'enregistrement A :</p>
-        <pre class="code">example.com. 3600 IN A 192.0.2.1</pre>
+        <p>Donc, l'adresse IP 192.168.1.1 en binaire est 11000000.10101000.00000001.00000001.</p>
         
         <video width="640" height="360" controls>
         <source src="DNS.mp4" type="video/mp4">
